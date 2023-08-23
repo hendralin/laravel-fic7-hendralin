@@ -79,7 +79,7 @@
                 <div class="d-sm-none d-lg-inline-block">Hi, {{ auth()->user()->name }}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a href="features-profile.html" class="dropdown-item has-icon">
+                <a href="{{ route('profile.edit') }}" class="dropdown-item has-icon">
                     <i class="far fa-user"></i> Profile
                 </a>
                 <div class="dropdown-divider"></div>
