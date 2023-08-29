@@ -6,6 +6,8 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\UploadController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\OrderController;
+use App\Http\Controllers\API\PaymentCallbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,10 @@ Route::post('logout', [AuthController::class, 'logout'])->middleware('auth:sanct
 
 Route::post('image/upload', [UploadController::class, 'uploadImage'])->middleware('auth:sanctum');
 Route::post('image/upload-multiple', [UploadController::class, 'uploadMultipleImage'])->middleware('auth:sanctum');
+
+Route::post('orders', [OrderController::class, 'order'])->middleware('auth:sanctum');
+
+Route::post('midtrans/notification/handling', [PaymentCallbackController::class, 'callback']);
 
 Route::apiResource('categories', CategoryController::class);
 Route::apiResource('products', ProductController::class);

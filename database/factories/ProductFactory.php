@@ -19,8 +19,8 @@ class ProductFactory extends Factory
         return [
             'name' => fake()->unique()->sentence(2),
             'description' => fake()->text(),
-            'price' => fake()->randomDigit(),
-            'image_url' => fake()->imageUrl($width=200, $height=200),
+            'price' => fake()->numberBetween(200000, 500000),
+            'image_url' => fake()->imageUrl($width = 200, $height = 200),
         ];
     }
 }
